@@ -1,0 +1,24 @@
+@import '../../../assets/css/colors.scss';
+
+.views-button {
+  width: fit-content;
+  padding: .2em;
+  border-radius: 10px;
+  background-color: $grey;
+
+  button {
+    // padding: .3em 2em;
+    width: 91px;
+    height: 33px;
+    border: none;
+    background-color: transparent;
+    color: $darkGrey;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  button.active {
+    background-color: $white;
+  }
+}

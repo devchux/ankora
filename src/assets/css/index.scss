@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap");
+@import './colors.scss';
+
+* {
+  font-family: "Nunito", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  display: flex;
+}
+
+#root > div {
+  width: 79.86%;
+}
+
+.ReactModal__Overlay--after-open {
+    z-index: 99;
+}

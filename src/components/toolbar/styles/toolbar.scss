@@ -1,0 +1,22 @@
+@import 'src/assets/css/colors.scss';
+
+.toolbar {
+  padding: 1.3em;
+
+  & > .toolbar-nav {
+    .navigator {
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       background-color: $grey;
+       cursor: pointer;
+     }
+   
+    .date {
+       font-size: 18px;
+       color: $lightBlack;
+       cursor: pointer;
+     }
+
+  }
+}

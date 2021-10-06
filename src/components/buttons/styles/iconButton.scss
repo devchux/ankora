@@ -1,0 +1,34 @@
+@import "src/assets/css/colors.scss";
+
+.icon-button {
+  border: none;
+  padding: .5em 0;
+  width: 98px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+
+  svg {
+    height: 11.25px;
+    width: 11.18px;
+    left: 1.91px;
+  }
+
+  &.is-cancel {
+    background: $grey;
+    color: $darkGrey;
+
+    svg {
+      height: 12.5px;
+      width: 12.5px;
+    }
+  }
+
+  &.is-check-in {
+    color: $lightRed;
+    background: $lighterOrange;
+  }
+}

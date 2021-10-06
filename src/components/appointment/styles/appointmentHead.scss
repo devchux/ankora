@@ -1,0 +1,17 @@
+@import "src/assets/css/colors.scss";
+
+.appointment-head {
+  .title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0em;
+  }
+
+  .cancel {
+    width: 24px;
+    height: 24px;
+    background: $darkerGrey;
+    border-radius: 5px;
+  }
+}

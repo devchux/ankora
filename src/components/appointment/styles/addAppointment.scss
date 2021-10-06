@@ -1,0 +1,37 @@
+@import "src/assets/css/colors.scss";
+
+.add-appointment {
+
+  .form-group {
+    margin: .5em 0;
+
+    .date-time-wrapper {
+      .time, & .date {
+        width: 180px;
+      }
+    }
+
+    label {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 19px;
+      letter-spacing: 0em;
+    }
+  
+    input, & select {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 19px;
+      letter-spacing: 0em;
+    }
+
+    .form-control {
+      height: 46px;
+      border-radius: 10px;
+      background-color: $grey;
+    }
+  }
+
+}

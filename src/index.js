@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import './assets/css/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

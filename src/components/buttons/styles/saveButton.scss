@@ -1,0 +1,12 @@
+@import "src/assets/css/colors.scss";
+
+.save-button {
+  width: 100%;
+  border: none;
+  height: 46px;
+  border-radius: 10px;
+  background: $miniBlacK;
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+}
