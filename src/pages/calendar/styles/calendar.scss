@@ -80,4 +80,12 @@
   .remove-event-node {
     background-color: transparent;
   }
+
+  .fixed-create-button {
+    position: fixed;
+    bottom: 10px;
+    width: 20%;
+    left: 50%;
+    z-index: 99;
+  }
 }

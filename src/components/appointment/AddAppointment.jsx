@@ -4,6 +4,16 @@ import AppointmentHead from "./AppointmentHead";
 import { useState } from "react";
 
 const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
+  const getDate = (date = new Date()) => {
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    return year + "-" + month + "-" + day;
+  };
   const [creds, setCreds] = useState({
     id: 0,
     title: "",
@@ -12,10 +22,10 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
     notes: "",
     indicator: "",
     urgency: "",
-    startDate: null,
-    startTime: null,
+    startDate: getDate(),
+    startTime: "00:00:00",
     endDate: null,
-    endTime: null,
+    endTime: "00:00:00",
     resourceId: 1,
   });
   if (isEdit) {
@@ -70,16 +80,21 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
       return each;
     });
     setEvents(newEvents);
+    closeModal();
   };
   return (
     <div className="add-appointment">
-      <AppointmentHead closeModal={closeModal}>Add Appointment</AppointmentHead>
+      <AppointmentHead closeModal={closeModal}>
+        Create Appointment
+      </AppointmentHead>
       <div className="body">
         <div className="form-group">
-          <label htmlFor="title">Type</label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             className="form-control"
+            placeholder="Enter the appointment title"
+            value={creds.title}
             onChange={({ target: { value } }) => handleChange("title", value)}
           />
         </div>
@@ -90,6 +105,8 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
               <input
                 type="date"
                 className="form-control"
+                min={getDate()}
+                value={creds.startDate}
                 onChange={({ target: { value } }) =>
                   handleChange("startDate", value)
                 }
@@ -99,6 +116,7 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
               <input
                 type="time"
                 className="form-control"
+                value={creds.startTime}
                 onChange={({ target: { value } }) =>
                   handleChange("startTime", value)
                 }
@@ -113,6 +131,8 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
               <input
                 type="date"
                 className="form-control"
+                value={creds.endDate}
+                min={creds.startDate}
                 onChange={({ target: { value } }) =>
                   handleChange("endDate", value)
                 }
@@ -122,6 +142,7 @@ const AddAppointment = ({ closeModal, setEvents, events, isEdit, event }) => {
               <input
                 type="time"
                 className="form-control"
+                value={creds.endTime}
                 onChange={({ target: { value } }) =>
                   handleChange("endTime", value)
                 }

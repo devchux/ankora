@@ -9,6 +9,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import AddAppointment from "../../components/appointment/AddAppointment";
 import ViewAppointment from "../../components/appointment/ViewAppointment";
+import SaveButton from "../../components/buttons/SaveButton";
 import {
   defaultEvents,
   resources,
@@ -96,6 +97,15 @@ function Calendar() {
           events={events}
         />
       </Modal>
+      <div className="fixed-create-button">
+        <SaveButton
+          onClick={() => {
+            setModalView("add appointment");
+            openModal();
+          }}
+          value="CREATE"
+        />
+      </div>
     </div>
   );
 }
